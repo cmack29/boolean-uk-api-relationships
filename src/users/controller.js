@@ -32,7 +32,9 @@ const getOneByAddress = async (req, res) => {
             where: {
                 id: parseInt(req.params.id)
             },
-            data: address
+            include: {
+                address: address
+            }
         })
         console.log(user)
         res.json({data: user})
